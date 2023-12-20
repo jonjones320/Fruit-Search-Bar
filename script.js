@@ -8,8 +8,7 @@ function search(str) {
 		if (eachFruit.toLowerCase().includes(str.toLowerCase())){
 			results.push(eachFruit);
 			}
-		}
-	)
+		})
 	return results;
 }
 
@@ -20,23 +19,20 @@ function searchHandler(e) {
 }
 
 function showSuggestions(results, inputVal) {
-	// console.log("results: ", results, "inputVal: ", inputVal, "suggestions: ", suggestions);
-	// console.log("inputVal: ", inputVal);
 	if (inputVal === "") { 
 		suggestions.classList.remove('has-suggestions');
 	}
 	else {
 		suggestions.innerText = "";
 		suggestions.classList.add('has-suggestions');
+
 		results.map((eachFruit) => {
 			let newLi = document.createElement('li');
+
 			newLi.classList.add("li");
 			newLi.append(eachFruit);
-			// console.log("newLi: ", newLi);
 			suggestions.append(newLi);
 		})
-
-		// console.log("suggestions: ", suggestions);
 	}
 }
 
